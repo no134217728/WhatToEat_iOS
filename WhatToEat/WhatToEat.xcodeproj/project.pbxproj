@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -18,6 +18,8 @@
 		AF13AF60245E90DC0026A5C8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF13AF5E245E90DC0026A5C8 /* LaunchScreen.storyboard */; };
 		AF13AF6B245E90DC0026A5C8 /* WhatToEatTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF13AF6A245E90DC0026A5C8 /* WhatToEatTests.swift */; };
 		AF13AF76245E90DC0026A5C8 /* WhatToEatUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF13AF75245E90DC0026A5C8 /* WhatToEatUITests.swift */; };
+		AF13AF89245E94300026A5C8 /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF13AF88245E94300026A5C8 /* AppReducer.swift */; };
+		AF13AF8B245E946A0026A5C8 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF13AF8A245E946A0026A5C8 /* AppState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +60,8 @@
 		AF13AF71245E90DC0026A5C8 /* WhatToEatUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WhatToEatUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF13AF75245E90DC0026A5C8 /* WhatToEatUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WhatToEatUITests.swift; sourceTree = "<group>"; };
 		AF13AF77245E90DC0026A5C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AF13AF88245E94300026A5C8 /* AppReducer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
+		AF13AF8A245E946A0026A5C8 /* AppState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		B094A1456F89E4C27A08F93E /* Pods-WhatToEat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhatToEat.release.xcconfig"; path = "Target Support Files/Pods-WhatToEat/Pods-WhatToEat.release.xcconfig"; sourceTree = "<group>"; };
 		CDA9A5D83778100C1A601322 /* Pods_WhatToEat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WhatToEat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3DB8013881FE2C8E0935125 /* Pods-WhatToEat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhatToEat.debug.xcconfig"; path = "Target Support Files/Pods-WhatToEat/Pods-WhatToEat.debug.xcconfig"; sourceTree = "<group>"; };
@@ -116,6 +120,7 @@
 		AF13AF52245E90DB0026A5C8 /* WhatToEat */ = {
 			isa = PBXGroup;
 			children = (
+				AF13AF83245E93F00026A5C8 /* SourceCode */,
 				AF13AF53245E90DB0026A5C8 /* AppDelegate.swift */,
 				AF13AF55245E90DB0026A5C8 /* SceneDelegate.swift */,
 				AF13AF57245E90DB0026A5C8 /* ViewController.swift */,
@@ -145,6 +150,47 @@
 			path = WhatToEatUITests;
 			sourceTree = "<group>";
 		};
+		AF13AF83245E93F00026A5C8 /* SourceCode */ = {
+			isa = PBXGroup;
+			children = (
+				AF13AF84245E93F00026A5C8 /* Redux */,
+			);
+			path = SourceCode;
+			sourceTree = "<group>";
+		};
+		AF13AF84245E93F00026A5C8 /* Redux */ = {
+			isa = PBXGroup;
+			children = (
+				AF13AF85245E93F00026A5C8 /* States */,
+				AF13AF86245E93F00026A5C8 /* Actions */,
+				AF13AF87245E93F00026A5C8 /* Reducers */,
+			);
+			path = Redux;
+			sourceTree = "<group>";
+		};
+		AF13AF85245E93F00026A5C8 /* States */ = {
+			isa = PBXGroup;
+			children = (
+				AF13AF8A245E946A0026A5C8 /* AppState.swift */,
+			);
+			path = States;
+			sourceTree = "<group>";
+		};
+		AF13AF86245E93F00026A5C8 /* Actions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Actions;
+			sourceTree = "<group>";
+		};
+		AF13AF87245E93F00026A5C8 /* Reducers */ = {
+			isa = PBXGroup;
+			children = (
+				AF13AF88245E94300026A5C8 /* AppReducer.swift */,
+			);
+			path = Reducers;
+			sourceTree = "<group>";
+		};
 		B80175B4875867781181DCF6 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -155,7 +201,6 @@
 				8E921B269310A443990AD826 /* Pods-WhatToEatTests.debug.xcconfig */,
 				9F808F0CB39BE61F56DA0471 /* Pods-WhatToEatTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -409,7 +454,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF13AF58245E90DB0026A5C8 /* ViewController.swift in Sources */,
+				AF13AF8B245E946A0026A5C8 /* AppState.swift in Sources */,
 				AF13AF54245E90DB0026A5C8 /* AppDelegate.swift in Sources */,
+				AF13AF89245E94300026A5C8 /* AppReducer.swift in Sources */,
 				AF13AF56245E90DB0026A5C8 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
