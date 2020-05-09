@@ -9,4 +9,11 @@
 import ReSwift
 
 struct AppState : StateType {
+    let defaultTemplateState: DefaultTemplateState
+}
+
+// MARK: - SubStates
+struct DefaultTemplateState : StateType {
+    var subscriber: String
+    let currentAction : Action?
 }

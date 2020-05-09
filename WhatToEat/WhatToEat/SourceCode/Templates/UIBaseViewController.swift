@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ReSwift
 
 class UIBaseViewController: UIViewController {
 

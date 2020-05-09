@@ -1,5 +1,5 @@
 //
-//  FindMyFoodTemplate.swift
+//  OptionalViewController.swift
 //  WhatToEat
 //
 //  Created by YuCheng on 2020/5/9.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class FindMyFoodTemplate: UIBaseViewController {
+class OptionalViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
