@@ -11,7 +11,7 @@ import ReSwift
 
 class SignViewController: UIViewController {
 
-    var defaultTemplate: DefaultTemplate? = nil
+    private var defaultTemplate: DefaultTemplate? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +34,7 @@ class SignViewController: UIViewController {
 }
 
 extension SignViewController: DefaultTemplateDelegate {
-    func subscribeDefaultTemplateState(state: DefaultTemplateState) {
+    func templateNewState(state: DefaultTemplateState) {
         switch state.currentAction {
         case _ as SignAppAction:
             let toVC = self.storyboard?.instantiateViewController(identifier: "OptionalViewController")

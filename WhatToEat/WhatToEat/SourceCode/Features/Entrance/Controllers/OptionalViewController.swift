@@ -10,12 +10,18 @@ import UIKit
 
 class OptionalViewController: UIViewController {
 
+    private var defaultTemplate: DefaultTemplate? = nil
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.defaultTemplate = self.parent as? DefaultTemplate
+        self.defaultTemplate?.stateDelegate = self
+    }
 
     /*
     // MARK: - Navigation
@@ -27,4 +33,9 @@ class OptionalViewController: UIViewController {
     }
     */
 
+}
+
+extension OptionalViewController: DefaultTemplateDelegate {
+    func templateNewState(state: DefaultTemplateState) {
+    }
 }
