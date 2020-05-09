@@ -1,5 +1,5 @@
 //
-//  RouteActions.swift
+//  SignActions.swift
 //  WhatToEat
 //
 //  Created by YuCheng on 2020/5/9.
@@ -7,7 +7,7 @@
 //
 
 import UIKit
+import ReSwift
 
-class RouteActions: NSObject {
-
+struct SignAppAction: Action {
 }

@@ -10,17 +10,15 @@ import ReSwift
 
 func appReducer(action: Action, state: AppState?) -> AppState {
     return AppState(
-//        nfcScanState: nfcScanReducer(action: action, state: state?.nfcScanState)
+        defaultTemplateState: defaultTemplateReducer(action: action, state: state?.defaultTemplateState)
     )
 }
-//// SubReducer
-//func nfcScanReducer(action: Action, state: NFCScanState?) -> NFCScanState {
-//    var clsName = state?.subscribeClassName ?? ""
-//    switch action {
-//    case is BindingClassAction:
-//        clsName
-//            = (action as? BindingClassAction)?.bindingClassName ?? ""
-//    default: break
-//    }
-//    return NFCScanState(subscribeClassName: clsName, currentAction: action)
-//}
+
+// MARK: - SubReducers
+func defaultTemplateReducer(action: Action, state: DefaultTemplateState?) -> DefaultTemplateState {
+    var newState = DefaultTemplateState(subscriber: state?.subscriber ?? "", currentAction: action)
+    if let currentAction = action as? RegisterStateAction {
+        newState.subscriber = currentAction.subscriber
+    }
+    return newState
+}
