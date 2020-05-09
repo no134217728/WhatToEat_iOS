@@ -36,6 +36,6 @@ class OptionalViewController: UIViewController {
 }
 
 extension OptionalViewController: DefaultTemplateDelegate {
-    func templateNewState(state: DefaultTemplateState) {
+    func receiveNewState(state: DefaultTemplateState) {
     }
 }

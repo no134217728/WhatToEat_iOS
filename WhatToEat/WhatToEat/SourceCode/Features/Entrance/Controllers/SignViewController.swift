@@ -34,7 +34,7 @@ class SignViewController: UIViewController {
 }
 
 extension SignViewController: DefaultTemplateDelegate {
-    func templateNewState(state: DefaultTemplateState) {
+    func receiveNewState(state: DefaultTemplateState) {
         switch state.currentAction {
         case _ as SignAppAction:
             let toVC = self.storyboard?.instantiateViewController(identifier: "OptionalViewController")
