@@ -28,6 +28,8 @@
 		AF67A9D62466D156008ABBCF /* OptionalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF67A9D42466D156008ABBCF /* OptionalViewController.swift */; };
 		AF67A9D72466D156008ABBCF /* SignViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF67A9D52466D156008ABBCF /* SignViewController.swift */; };
 		AF67A9D92466D175008ABBCF /* Entrance.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF67A9D82466D175008ABBCF /* Entrance.storyboard */; };
+		AF67A9E32466E12E008ABBCF /* AddGourmets.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF67A9E22466E12E008ABBCF /* AddGourmets.storyboard */; };
+		AF67A9E52466E29A008ABBCF /* AddGourmetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF67A9E42466E29A008ABBCF /* AddGourmetViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +80,8 @@
 		AF67A9D42466D156008ABBCF /* OptionalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionalViewController.swift; sourceTree = "<group>"; };
 		AF67A9D52466D156008ABBCF /* SignViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignViewController.swift; sourceTree = "<group>"; };
 		AF67A9D82466D175008ABBCF /* Entrance.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Entrance.storyboard; sourceTree = "<group>"; };
+		AF67A9E22466E12E008ABBCF /* AddGourmets.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AddGourmets.storyboard; sourceTree = "<group>"; };
+		AF67A9E42466E29A008ABBCF /* AddGourmetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGourmetViewController.swift; sourceTree = "<group>"; };
 		B094A1456F89E4C27A08F93E /* Pods-WhatToEat.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhatToEat.release.xcconfig"; path = "Target Support Files/Pods-WhatToEat/Pods-WhatToEat.release.xcconfig"; sourceTree = "<group>"; };
 		CDA9A5D83778100C1A601322 /* Pods_WhatToEat.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WhatToEat.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3DB8013881FE2C8E0935125 /* Pods-WhatToEat.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WhatToEat.debug.xcconfig"; path = "Target Support Files/Pods-WhatToEat/Pods-WhatToEat.debug.xcconfig"; sourceTree = "<group>"; };
@@ -214,6 +218,7 @@
 		AF67A99F246663FC008ABBCF /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				AF67A9DE2466E111008ABBCF /* AddGourmets */,
 				AF67A9C72466D12E008ABBCF /* Entrance */,
 				AF67A9A4246663FC008ABBCF /* FindMyFood */,
 			);
@@ -283,6 +288,39 @@
 			isa = PBXGroup;
 			children = (
 				AF67A9D82466D175008ABBCF /* Entrance.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		AF67A9DE2466E111008ABBCF /* AddGourmets */ = {
+			isa = PBXGroup;
+			children = (
+				AF67A9DF2466E111008ABBCF /* Presenters */,
+				AF67A9E02466E111008ABBCF /* Controllers */,
+				AF67A9E12466E111008ABBCF /* Views */,
+			);
+			path = AddGourmets;
+			sourceTree = "<group>";
+		};
+		AF67A9DF2466E111008ABBCF /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Presenters;
+			sourceTree = "<group>";
+		};
+		AF67A9E02466E111008ABBCF /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				AF67A9E42466E29A008ABBCF /* AddGourmetViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		AF67A9E12466E111008ABBCF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AF67A9E22466E12E008ABBCF /* AddGourmets.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -419,6 +457,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF67A9E32466E12E008ABBCF /* AddGourmets.storyboard in Resources */,
 				AF67A9D92466D175008ABBCF /* Entrance.storyboard in Resources */,
 				AF13AF60245E90DC0026A5C8 /* LaunchScreen.storyboard in Resources */,
 				AF13AF5D245E90DC0026A5C8 /* Assets.xcassets in Resources */,
@@ -559,6 +598,7 @@
 				AF13AF8B245E946A0026A5C8 /* AppState.swift in Sources */,
 				AF13AF54245E90DB0026A5C8 /* AppDelegate.swift in Sources */,
 				AF67A9D62466D156008ABBCF /* OptionalViewController.swift in Sources */,
+				AF67A9E52466E29A008ABBCF /* AddGourmetViewController.swift in Sources */,
 				AF13AF89245E94300026A5C8 /* AppReducer.swift in Sources */,
 				AF13AF56245E90DB0026A5C8 /* SceneDelegate.swift in Sources */,
 				AF67A9C024669AF1008ABBCF /* CommonActions.swift in Sources */,
