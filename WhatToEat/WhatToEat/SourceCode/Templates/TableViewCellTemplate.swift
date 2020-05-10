@@ -9,7 +9,7 @@
 import UIKit
 
 enum LRCellType : Int {
-    case TextLabel,TextField,SelectionArrow,Button
+    case TextLabel,TextField,Button
 }
 class LRTableViewCell: UITableViewCell {
 
@@ -17,10 +17,11 @@ class LRTableViewCell: UITableViewCell {
     @IBOutlet weak var cellLeftLabel: UILabel!
     @IBOutlet weak var cellRightView: UIView!
 
-    var rigthtContentView : UIView? = nil
+    private var leftContentView : UIView? = nil
+    private var rigthtContentView : UIView? = nil
     var cellType : LRCellType = .TextLabel
     var indexPath : IndexPath? = nil
-    var cellTypeProtocol: CellTypeProtocol?
+    var cellProtocol: LRTableCellProtocol?
 
     
     override func awakeFromNib() {
@@ -34,14 +35,11 @@ class LRTableViewCell: UITableViewCell {
             createTextLabelOnCell()
         case .TextField:
             createTextFieldOnCell()
-        case .SelectionArrow:
-            createSelectionArrowOnView()
         default: break
         }
     }
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
     }
     override func prepareForReuse() {
@@ -51,7 +49,7 @@ class LRTableViewCell: UITableViewCell {
     }
     private func createTextLabelOnCell() {
         if cellRightView.subviews.count == 0 {
-            let data = cellTypeProtocol as? CellTextLabel
+            let data = cellProtocol as? LRTextLabelCell
             let textLabel = UILabel()
             textLabel.translatesAutoresizingMaskIntoConstraints = false
             textLabel.textColor = UIColor(red: 74.0/255.0, green: 74.0/255.0, blue: 74.0/255.0, alpha: 1.0)
@@ -64,25 +62,10 @@ class LRTableViewCell: UITableViewCell {
             rigthtContentView = textLabel
         }
     }
-    private func createSelectionArrowOnView() {
-        self.accessoryType = .disclosureIndicator
-        if cellRightView.subviews.count == 0 {
-            //let data = cellTypeProtocol as? CellTextLabel
-            let textLabel = UILabel()
-            textLabel.translatesAutoresizingMaskIntoConstraints = false
-            textLabel.textColor = UIColor(red: 74.0/255.0, green: 74.0/255.0, blue: 74.0/255.0, alpha: 1.0)
-            textLabel.font = UIFont.systemFont(ofSize: 15.0)
-            textLabel.text = "請選擇"
-            //textLabel.textAlignment = .left
-            cellRightView.addSubview(textLabel)
-            cellRightView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|-[textLabel]-|", options: [], metrics: nil, views: ["textLabel": textLabel]))
-            cellRightView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|-[textLabel]-|", options: [], metrics: nil, views: ["textLabel": textLabel]))
-            rigthtContentView = textLabel
-        }
-    }
+    
     private func createTextFieldOnCell() {
         if cellRightView.subviews.count == 0 {
-            let data = cellTypeProtocol as? CellTextField
+            let data = cellProtocol as? LRTextFieldCell
             let textField = UITextField()
             textField.translatesAutoresizingMaskIntoConstraints = false
             if data?.inputText.isEmpty == false {

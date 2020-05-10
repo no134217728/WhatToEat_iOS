@@ -8,4 +8,7 @@
 
 import UIKit
 
-let sectionTitles : Array<String> = ["Shop","","Branch","Location"]
+
+struct AddGourmetsTableData {
+    let sectionTitles : Array<String> = ["Shop","","Branch","Location"]
+}

@@ -68,7 +68,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="separatorColor" red="0.90196078430000004" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="LRTableViewCell" rowHeight="83" id="2u9-PD-Vqw" customClass="LRTableViewCell" customModule="Juksy_Holic" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="LRTableViewCell" rowHeight="83" id="2u9-PD-Vqw" customClass="LRTableViewCell" customModule="WhatToEat" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="83"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2u9-PD-Vqw" id="QTV-pO-hEj">
@@ -77,7 +77,19 @@
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mh2-j1-2id" userLabel="Left View">
                                                     <rect key="frame" x="0.0" y="0.0" width="94" height="83"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gEE-7Y-w6J">
+                                                            <rect key="frame" x="29" y="33" width="35.5" height="17"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstItem="gEE-7Y-w6J" firstAttribute="centerY" secondItem="Mh2-j1-2id" secondAttribute="centerY" id="7rH-0s-aGx"/>
+                                                        <constraint firstItem="gEE-7Y-w6J" firstAttribute="centerX" secondItem="Mh2-j1-2id" secondAttribute="centerX" id="Iyv-VF-kte"/>
+                                                    </constraints>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GhN-jf-bKg" userLabel="Right View">
                                                     <rect key="frame" x="94" y="0.0" width="281" height="83"/>
@@ -96,11 +108,12 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="cellLeftLabel" destination="gEE-7Y-w6J" id="e32-lY-auU"/>
                                             <outlet property="cellLeftView" destination="Mh2-j1-2id" id="ggB-OJ-F6u"/>
                                             <outlet property="cellRightView" destination="GhN-jf-bKg" id="n36-od-6JE"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ButtonTableViewCell" rowHeight="109" id="pP4-7g-wow" customClass="ButtonTableViewCell" customModule="Juksy_Holic" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ButtonTableViewCell" rowHeight="109" id="pP4-7g-wow" customClass="ButtonTableViewCell" customModule="WhatToEat" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="111" width="375" height="109"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pP4-7g-wow" id="nFy-Yk-0di">
@@ -114,9 +127,6 @@
                                                         <constraint firstAttribute="width" secondItem="ybl-ko-IOb" secondAttribute="height" multiplier="35:4" id="pt4-Qj-mh7"/>
                                                     </constraints>
                                                     <state key="normal" title="關閉"/>
-                                                    <connections>
-                                                        <action selector="closeButtonClickActionWithSender:" destination="5Fd-Cd-jp2" eventType="touchUpInside" id="B4b-aL-WRt"/>
-                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -147,9 +157,6 @@
                         <viewLayoutGuide key="safeArea" id="OUN-nw-iP0"/>
                     </view>
                     <navigationItem key="navigationItem" id="Q4i-zN-D2d"/>
-                    <connections>
-                        <outlet property="tableView" destination="x5F-iB-NIx" id="VYE-tc-LWi"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o1d-aB-nP4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
