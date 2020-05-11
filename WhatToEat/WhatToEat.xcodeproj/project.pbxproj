@@ -387,6 +387,7 @@
 			buildConfigurationList = AF13AF7A245E90DC0026A5C8 /* Build configuration list for PBXNativeTarget "WhatToEat" */;
 			buildPhases = (
 				00BF1C43977E7903D61097EF /* [CP] Check Pods Manifest.lock */,
+				20A5F1EE246942E700DD3AFD /* Generate Apollo GraphQL API */,
 				AF13AF4C245E90DB0026A5C8 /* Sources */,
 				AF13AF4D245E90DB0026A5C8 /* Frameworks */,
 				AF13AF4E245E90DB0026A5C8 /* Resources */,
@@ -554,6 +555,24 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WhatToEat-WhatToEatUITests/Pods-WhatToEat-WhatToEatUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		20A5F1EE246942E700DD3AFD /* Generate Apollo GraphQL API */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Generate Apollo GraphQL API";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "SCRIPT_PATH=\"${PODS_ROOT}/Apollo/scripts\"\ncd \"${SRCROOT}/${TARGET_NAME}\"\n\"${SCRIPT_PATH}\"/run-bundled-codegen.sh codegen:generate --target=swift --includes=./**/*.graphql --localSchemaFile=\"schema.json\" API.swift\n";
 		};
 		775A3DD4426F9EA75A6A6049 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
